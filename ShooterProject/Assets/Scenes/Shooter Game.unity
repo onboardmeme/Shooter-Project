@@ -2227,7 +2227,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -2252,8 +2252,8 @@ Transform:
   m_GameObject: {fileID: 658464204}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.5, y: -0.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 14.18, y: -0.057427, z: 0}
+  m_LocalScale: {x: 1.6959008, y: 1.960627, z: 1.2033}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2931,6 +2931,7 @@ MonoBehaviour:
   sliderHealth: {fileID: 73900209}
   shield: {fileID: 240335427}
   maxBulletCooldown: 0.5
+  expoPrefab: {fileID: 7909087763977901054, guid: ada1ff2438038a3439706ce6d019e1aa, type: 3}
 --- !u!58 &786289105
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4690,7 +4691,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
