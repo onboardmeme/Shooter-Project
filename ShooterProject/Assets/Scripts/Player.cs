@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
   public Shield shield;
   public float maxBulletCooldown;
   public GameObject expoPrefab;
+  public UI ui;
 
   // private fields
   private float health;
@@ -73,7 +74,6 @@ public class Player : MonoBehaviour {
             {
                 var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
                 Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
-                Destroy(gameObject);
             }
     }
   }

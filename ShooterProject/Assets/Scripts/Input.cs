@@ -11,4 +11,12 @@ public class SpaceShooterInput : MonoBehaviour {
     input = inputActions.Standard;
     input.Enable();
   }
+    public void DisableInput()
+    {
+
+    }
+    public void EnableInput()
+    {
+
+    }
 }

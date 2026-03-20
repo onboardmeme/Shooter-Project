@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour {
   // set in inspector
@@ -41,6 +43,7 @@ public class Game : MonoBehaviour {
   }
   void Update() {
     // check spawn enemy
+
     enemySpawnTimer += Time.deltaTime;
     if (enemySpawnTimer >= enemySpawnDelay) {
       SpawnEnemy();
