@@ -7,7 +7,9 @@ public class Game : MonoBehaviour {
   public float enemySpawnDelay;
   public GameObject enemyPrefab;
   public GameObject enemy2Prefab;
-  public GameObject powerupPrefab;
+  public GameObject enemy3Prefab;
+    public GameObject enemy4Prefab;
+    public GameObject powerupPrefab;
   public BoxCollider2D spawnRange;
 
   // private fields
@@ -34,7 +36,23 @@ public class Game : MonoBehaviour {
             0);
         Instantiate(enemy2Prefab, enemySpawnPt, Quaternion.identity);
    }
-   private void SpawnPowerup() {
+    private void SpawnEnemy3()
+    {
+        Vector3 enemySpawnPt = new Vector3(
+            Random.Range(spawnRange.bounds.min.x, spawnRange.bounds.max.x),
+            Random.Range(spawnRange.bounds.min.y, spawnRange.bounds.max.y),
+            0);
+        Instantiate(enemy3Prefab, enemySpawnPt, Quaternion.identity);
+    }
+    private void SpawnEnemy4()
+    {
+        Vector3 enemySpawnPt = new Vector3(
+            Random.Range(spawnRange.bounds.min.x, spawnRange.bounds.max.x),
+            Random.Range(spawnRange.bounds.min.y, spawnRange.bounds.max.y),
+            0);
+        Instantiate(enemy4Prefab, enemySpawnPt, Quaternion.identity);
+    }
+    private void SpawnPowerup() {
     Vector3 powerupSpawnPt = new Vector3(
         Random.Range(spawnRange.bounds.min.x, spawnRange.bounds.max.x),
         Random.Range(spawnRange.bounds.min.y, spawnRange.bounds.max.y),
@@ -56,8 +74,21 @@ public class Game : MonoBehaviour {
       enemySpawnTimer = 0.0f;
     }
 
-    // check spawn powerup
-    powerupSpawnTimer += Time.deltaTime;
+    enemySpawnTimer += Time.deltaTime;
+    if (enemySpawnTimer >= enemySpawnDelay) {
+      SpawnEnemy3();
+      enemySpawnTimer = 0.0f;
+    }
+
+        enemySpawnTimer += Time.deltaTime;
+        if (enemySpawnTimer >= enemySpawnDelay)
+        {
+            SpawnEnemy4();
+            enemySpawnTimer = 0.0f;
+        }
+
+        // check spawn powerup
+        powerupSpawnTimer += Time.deltaTime;
     if (powerupSpawnTimer >= powerUpDelay) {
       SpawnPowerup();
       powerUpDelay = Random.Range(5, 10);

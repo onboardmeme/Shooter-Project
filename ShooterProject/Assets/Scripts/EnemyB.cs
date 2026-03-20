@@ -25,10 +25,13 @@ public class EnemyB : MonoBehaviour {
             Destroy(gameObject);
             c.gameObject.GetComponent<Player>().DamageFromEnemy();
         }
-        else if (c.gameObject.CompareTag("Despawn"))
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Despawn"))
         {
             Destroy(gameObject);
         }
     }
-  }
+}
 

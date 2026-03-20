@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class BigEnemyB : MonoBehaviour {
   // set in inspector
   public float speed;
   public GameObject expoPrefab;
+    public GameObject enemyspawn;
 
   void Update() {
     transform.Translate(Vector3.left * speed * Time.deltaTime);
@@ -15,8 +16,9 @@ public class Enemy : MonoBehaviour {
       Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
       Destroy(gameObject);
       Destroy(c.gameObject);
-      Score.Instance.HitEnemy();
-    }
+      Instantiate(enemyspawn, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+      Instantiate(enemyspawn, transform.position + Vector3.up * -0.5f, Quaternion.identity);
+        }
     else if (c.gameObject.CompareTag("Player")) {
             var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
             Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);

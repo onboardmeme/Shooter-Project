@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18815278a21f432aa48915cffbdbeec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  speed: 5
+  speed: 3
   expoPrefab: {fileID: 7909087763977901054, guid: ada1ff2438038a3439706ce6d019e1aa, type: 3}
 --- !u!50 &-1162253528925871094
 Rigidbody2D:

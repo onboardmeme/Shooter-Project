@@ -17,9 +17,12 @@ public class Powerup : MonoBehaviour {
       Destroy(gameObject);
       c.gameObject.GetComponent<Player>().RefillShield();
     }
-    else if (c.gameObject.CompareTag("Despawn"))
-    {
-            Destroy(gameObject);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Despawn"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
