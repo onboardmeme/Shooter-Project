@@ -13,7 +13,7 @@ public class SpaceShooterInput : MonoBehaviour {
   }
     public void DisableInput()
     {
-
+   
     }
     public void EnableInput()
     {

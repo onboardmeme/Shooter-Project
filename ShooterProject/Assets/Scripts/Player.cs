@@ -80,10 +80,11 @@ public class Player : MonoBehaviour {
   }
 
   public void DamageFromEnemy() {
-    if (!shield.IsActive) {
-      health -= 0.25f;
-      audiosrc.clip = clipHurt;
-      audiosrc.Play();
+        if (!shield.IsActive)
+        {
+            health -= 0.25f;
+            audiosrc.clip = clipHurt;
+            audiosrc.Play();
             if (health <= 0)
             {
                 var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
@@ -91,10 +92,26 @@ public class Player : MonoBehaviour {
                 ui.ShowGameOver();
 
             }
-    }
+        }
   }
+    public void DamageFromEnemyAlt()
+    {
+        if (shield.IsActive)
+        {
+            health -= 0.25f;
+            audiosrc.clip = clipHurt;
+            audiosrc.Play();
+            if (health <= 0)
+            {
+                var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
+                Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
+                ui.ShowGameOver();
 
-  public void RefillShield() {
+            }
+        }
+    }
+
+    public void RefillShield() {
         audiosrc.clip = clipPowerup;
         audiosrc.Play();
         shield.FullRefill();

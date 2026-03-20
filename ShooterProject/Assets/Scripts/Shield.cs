@@ -28,18 +28,9 @@ public class Shield : MonoBehaviour {
 
     slider.value = Mathf.Clamp(protectionTime / maxProtectionTime, 0f, 1f);
     if (SpaceShooterInput.Instance.input.Shield.IsPressed()) {
-      if (protectionTime > 0) {
-        protectionTime -= Time.deltaTime;
         IsActive = true;
       }
-      else {
-        IsActive = false;
-        protectionTime = 0;
-      }
-    }
     else {
-      protectionTime += Time.deltaTime;
-      protectionTime = Mathf.Clamp(protectionTime, 0, maxProtectionTime);
       IsActive = false;
     }
     shield.SetActive(IsActive);
