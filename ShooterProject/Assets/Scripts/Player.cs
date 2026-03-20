@@ -9,8 +9,10 @@ public class Player : MonoBehaviour {
   public Slider sliderHealth;
   public Shield shield;
   public float maxBulletCooldown;
+  public float maxSuperCooldown;
   public GameObject expoPrefab;
   public UI ui;
+    public GameObject SuperBulletPrefab;
     public AudioClip clipNormalFire;
     public AudioClip clipSuperFire;
     public AudioClip clipHurt;
@@ -20,11 +22,13 @@ public class Player : MonoBehaviour {
     private float health;
   private const float Y_LIMIT = 4.6f;
     private float BulletCooldown;
+    private float SuperCooldown;
     private AudioSource audiosrc;
 
   private void Start() {
     health = 1.0f;
     BulletCooldown = maxBulletCooldown;
+    SuperCooldown = maxSuperCooldown;
         audiosrc = GetComponent<AudioSource>();
   }
 
@@ -48,13 +52,11 @@ public class Player : MonoBehaviour {
         }
         if (SpaceShooterInput.Instance.input.SuperFire.WasPressedThisFrame())
         {
-            if (BulletCooldown >= maxBulletCooldown)
+            if (SuperCooldown >= maxSuperCooldown)
             {
-                GameObject bulletObj = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-                bulletObj.GetComponent<Bullet>().speed *= 2;
-                Instantiate(bulletPrefab, bulletSpawnPoint.position + Vector3.up * 0.5f, Quaternion.identity);
-                Instantiate(bulletPrefab, bulletSpawnPoint.position + Vector3.up * -0.5f, Quaternion.identity);
-                BulletCooldown = 0;
+                GameObject SuperObj = Instantiate(SuperBulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+                SuperObj.GetComponent<Fire>().speed *= 2;
+                SuperCooldown = 0;
                 audiosrc.clip = clipSuperFire;
                 audiosrc.Play();
             }
@@ -62,8 +64,8 @@ public class Player : MonoBehaviour {
         }
         else
         {
-            BulletCooldown += Time.deltaTime;
-            BulletCooldown = Mathf.Clamp(BulletCooldown, 0, maxBulletCooldown);
+            SuperCooldown += Time.deltaTime;
+            SuperCooldown = Mathf.Clamp(BulletCooldown, 0, maxBulletCooldown);
         }
 
         var vertMove = SpaceShooterInput.Instance.input.MoveVertically.ReadValue<float>();

@@ -15,7 +15,6 @@ public class EnemyB : MonoBehaviour {
             var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
             Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
             Destroy(gameObject);
-            Destroy(c.gameObject);
             Score.Instance.HitEnemy();
         }
         else if (c.gameObject.CompareTag("Player"))

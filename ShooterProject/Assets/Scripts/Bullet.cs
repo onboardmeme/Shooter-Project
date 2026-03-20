@@ -14,9 +14,17 @@ public class Bullet : MonoBehaviour
     {
         this.transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
     private void OnTriggerEnter2D (Collider2D collision)
     {
-        if (collision.CompareTag("Despawn"))
+            if (collision.CompareTag("Despawn"))
         {
             Destroy(gameObject);
         }

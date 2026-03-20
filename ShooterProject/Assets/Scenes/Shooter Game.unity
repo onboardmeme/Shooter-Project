@@ -3257,8 +3257,10 @@ MonoBehaviour:
   sliderHealth: {fileID: 73900209}
   shield: {fileID: 240335427}
   maxBulletCooldown: 1
+  maxSuperCooldown: 0.3
   expoPrefab: {fileID: 7909087763977901054, guid: ada1ff2438038a3439706ce6d019e1aa, type: 3}
   ui: {fileID: 1637983210}
+  SuperBulletPrefab: {fileID: 707319000358931554, guid: 21476d61abedeec46ad4c614b8397855, type: 3}
   clipNormalFire: {fileID: 8300000, guid: e0e7779e23d46324d8af7c45ecc3ad64, type: 3}
   clipSuperFire: {fileID: 8300000, guid: e0e7779e23d46324d8af7c45ecc3ad64, type: 3}
   clipHurt: {fileID: 8300000, guid: e0e7779e23d46324d8af7c45ecc3ad64, type: 3}
