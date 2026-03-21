@@ -5,8 +5,16 @@ public class Enemy : MonoBehaviour {
   // set in inspector
   public float speed;
   public GameObject expoPrefab;
+    public float bulletDamage;
 
-  void Update() {
+    private float health;
+
+    private void Start()
+    {
+        health = 1f;
+    }
+
+    void Update() {
     transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
 
@@ -14,10 +22,14 @@ public class Enemy : MonoBehaviour {
 
         if (c.gameObject.CompareTag("Bullet"))
         {
-            var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
-            Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
-            Destroy(gameObject);
-            Score.Instance.HitEnemy();
+            health -= bulletDamage;
+            if (health <= 0)
+            {
+                var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
+                Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
+                Destroy(gameObject);
+                Score.Instance.HitEnemy();
+            }
         }
         else if (c.gameObject.CompareTag("Player"))
         {

@@ -129,6 +129,7 @@ MonoBehaviour:
   speed: 3
   expoPrefab: {fileID: 7909087763977901054, guid: ada1ff2438038a3439706ce6d019e1aa, type: 3}
   enemyspawn: {fileID: 3409777995842195204, guid: cbc1c66a53e1dc4499853bbf61776b5a, type: 3}
+  bulletDamage: 0.5
 --- !u!1 &7558194330665879706
 GameObject:
   m_ObjectHideFlags: 0

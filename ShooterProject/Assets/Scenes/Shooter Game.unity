@@ -2086,6 +2086,7 @@ MonoBehaviour:
   enemy4Prefab: {fileID: 3409777995842195204, guid: 49b8edd4dc3d273489174983fb682f2a, type: 3}
   powerupPrefab: {fileID: 7665686937186703866, guid: 07f2ea3b03915449aa7e57f1e6305b14, type: 3}
   spawnRange: {fileID: 1681509736}
+  ui: {fileID: 0}
 --- !u!4 &554489001
 Transform:
   m_ObjectHideFlags: 0
@@ -3255,7 +3256,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 101424959}
   sliderHealth: {fileID: 73900209}
   shield: {fileID: 240335427}
-  maxBulletCooldown: 0.7
+  maxBulletCooldown: 0.5
   maxSuperCooldown: 0.3
   maxSuperMeter: 1
   expoPrefab: {fileID: 7909087763977901054, guid: ada1ff2438038a3439706ce6d019e1aa, type: 3}

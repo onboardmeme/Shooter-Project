@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyB
   speed: 5
   expoPrefab: {fileID: 7909087763977901054, guid: ada1ff2438038a3439706ce6d019e1aa, type: 3}
+  bulletDamage: 1
 --- !u!1 &7558194330665879706
 GameObject:
   m_ObjectHideFlags: 0
