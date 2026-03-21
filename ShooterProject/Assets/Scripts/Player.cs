@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.RuleTile.TilingRuleOutput;
+using Transform = UnityEngine.Transform;
 
 public class Player : MonoBehaviour {
   // set in inspector
@@ -23,6 +25,7 @@ public class Player : MonoBehaviour {
     // private fields
     private float health;
   private const float Y_LIMIT = 4.6f;
+    private const float X_LIMIT = 8.3f;
     private float BulletCooldown;
     private float SuperCooldown;
     private float SuperMeter;
@@ -79,6 +82,8 @@ public class Player : MonoBehaviour {
 
         var vertMove = SpaceShooterInput.Instance.input.MoveVertically.ReadValue<float>();
     this.transform.Translate(Vector3.up * speed * Time.deltaTime * vertMove);
+        var horzMove = SpaceShooterInput.Instance.input.MoveHorizontally.ReadValue<float>();
+        this.transform.Translate(Vector3.right * speed * Time.deltaTime * horzMove);
 
     if (this.transform.position.y > Y_LIMIT) {
       this.transform.position = new Vector3(transform.position.x, Y_LIMIT);
@@ -86,9 +91,18 @@ public class Player : MonoBehaviour {
     else if (this.transform.position.y < -Y_LIMIT) {
       this.transform.position = new Vector3(transform.position.x, -Y_LIMIT);
     }
-  }
+        if (this.transform.position.x > X_LIMIT)
+        {
+            this.transform.position = new Vector3(X_LIMIT, transform.position.y);
+        }
+        else if (this.transform.position.x < -X_LIMIT)
+        {
+            this.transform.position = new Vector3(-X_LIMIT, transform.position.y);
+        }
+    }
 
-  public void DamageFromEnemy() {
+
+    public void DamageFromEnemy() {
         if (!shield.IsActive)
         {
             health -= 0.25f;
