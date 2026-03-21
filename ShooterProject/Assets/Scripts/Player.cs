@@ -66,7 +66,7 @@ public class Player : MonoBehaviour {
                     SuperCooldown = 0;
                     audiosrc.clip = clipSuperFire;
                     audiosrc.Play();
-                    SuperMeter -= maxSuperMeter * 0.25f;
+                    SuperMeter -= maxSuperMeter * 0.5f;
                 }
             }
 
