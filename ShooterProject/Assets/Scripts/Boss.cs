@@ -10,13 +10,14 @@ public class Boss : MonoBehaviour {
     public GameObject enemy2prefab;
     public float bulletDamage;
     public Transform minionSpawnPoint;
+    public float initialMoveMax;
 
     private float health;
     private float minionSpawnTimer;
+    private float initialMove;
 
     private void Start()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
         health = 1f;
         minionSpawnTimer = 0f;
     }
@@ -32,6 +33,14 @@ public class Boss : MonoBehaviour {
     }
 
     void Update() {
+
+        if (initialMove < initialMoveMax)
+        {
+            initialMove += Time.deltaTime;
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+
+
         minionSpawnTimer += Time.deltaTime;
         if (minionSpawnTimer >= minionSpawnDelay)
         {

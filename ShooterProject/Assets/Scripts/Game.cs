@@ -99,6 +99,13 @@ public class Game : MonoBehaviour {
             enemySpawnTimer = 0.0f;
         }
 
+        bossSpawnTimer += Time.deltaTime;
+        if (bossSpawnTimer >= bossSpawnDelay)
+        {
+            SpawnBoss();
+            bossSpawnTimer = 0.0f;
+        }
+
         // check spawn powerup
         powerupSpawnTimer += Time.deltaTime;
     if (powerupSpawnTimer >= powerUpDelay) {
