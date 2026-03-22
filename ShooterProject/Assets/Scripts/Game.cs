@@ -74,6 +74,11 @@ public class Game : MonoBehaviour {
     // check spawn enemy
     // if (!ui.IsReady) return;
 
+    if (!ui.IsReady)
+        {
+            return;
+        }
+
     enemySpawnTimer += Time.deltaTime;
     if (enemySpawnTimer >= enemySpawnDelay) {
       SpawnEnemy();
