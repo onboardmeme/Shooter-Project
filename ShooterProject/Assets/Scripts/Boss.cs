@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour {
     public GameObject enemy1prefab;
     public GameObject enemy2prefab;
     public float bulletDamage;
-    public Transform minionSpawnPoint;
+    public BoxCollider2D minionSpawnPoint;
     public float initialMoveMax;
 
     private float health;
@@ -24,12 +24,14 @@ public class Boss : MonoBehaviour {
 
     private void SpawnEnemy()
     {
-        GameObject minion = Instantiate(enemy1prefab, minionSpawnPoint.position, Quaternion.identity);
+        Vector3 randomY = new Vector3(minionSpawnPoint.bounds.min.x, Random.Range(1, -1), 0);
+        GameObject minion = Instantiate(enemy1prefab, randomY, Quaternion.identity);
     }
 
     private void SpawnEnemy2()
     {
-        GameObject minion = Instantiate(enemy2prefab, minionSpawnPoint.position, Quaternion.identity);
+        Vector3 randomY = new Vector3(minionSpawnPoint.bounds.min.x, Random.Range(1, -1), 0);
+        GameObject minion = Instantiate(enemy2prefab, randomY, Quaternion.identity);
     }
 
     void Update() {
