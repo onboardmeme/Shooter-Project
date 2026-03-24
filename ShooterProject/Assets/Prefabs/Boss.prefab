@@ -326,7 +326,7 @@ MonoBehaviour:
   enemy2prefab: {fileID: 3409777995842195204, guid: 992015109d2204d5c9a3ef2da01e8542, type: 3}
   bulletDamage: 0.05
   minionSpawnPoint: {fileID: 6731950427969722368}
-  initialMoveMax: 3
+  initialMoveMax: 1
 --- !u!1 &1563018872315874906
 GameObject:
   m_ObjectHideFlags: 0
