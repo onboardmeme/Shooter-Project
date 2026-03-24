@@ -2525,7 +2525,10 @@ MonoBehaviour:
     Item Pickup - Sci-Fi Charge,
     Freesound Community
 
-    Music - Battle of the Holy Midi 4, KHInsider
+    Stage Music - Battle of the Holy Midi 4, KHInsider
+
+    Boss
+    Music - Dreadful Fight Remix, KHInsider
 
 '
   m_isRightToLeft: 0
@@ -3377,7 +3380,7 @@ MonoBehaviour:
   ui: {fileID: 1637983210}
   SuperBulletPrefab: {fileID: 707319000358931554, guid: 21476d61abedeec46ad4c614b8397855, type: 3}
   clipNormalFire: {fileID: 8300000, guid: 5dbe353b7e01e104b91f9015dcfd1918, type: 3}
-  clipSuperFire: {fileID: 8300000, guid: a10258958a4ee2647860cb30b5b4a65d, type: 3}
+  clipSuperFire: {fileID: 8300000, guid: 7e3145741ca32cd42920cc405244d7ca, type: 3}
   clipHurt: {fileID: 8300000, guid: d13c3bcc60b9d6b4eb8d3d52a70b15db, type: 3}
   clipPowerup: {fileID: 8300000, guid: 30a829c0161c3984084dcc795ac2f683, type: 3}
   sliderSuper: {fileID: 240335426}
@@ -5336,7 +5339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1292325157
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5936,7 +5939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1526750697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6931,6 +6934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689792350}
   - component: {fileID: 1689792349}
+  - component: {fileID: 1689792351}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -7050,6 +7054,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 86074573}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1689792351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689792348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a02af71e9c581a42b867310882a7794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  StageTheme: {fileID: 8300000, guid: 1739d4536df0673438858fb74c236d85, type: 3}
+  BossTheme: {fileID: 8300000, guid: 260b1eb0c0fa9d742bad17abe55ec1d6, type: 3}
+  ui: {fileID: 1637983210}
+  boss: {fileID: 4717340921982210562, guid: b852ef50a3d95b54bbe6df7b0a013a85, type: 3}
 --- !u!1 &1719656610
 GameObject:
   m_ObjectHideFlags: 0

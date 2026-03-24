@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Boss
   speed: 6
   expoPrefab: {fileID: 4041104391825592548, guid: 2922c09bb961f6a4aab445e62d3325b8, type: 3}
-  minionSpawnDelay: 5
+  minionSpawnDelay: 3
   enemy1prefab: {fileID: 3409777995842195204, guid: cbc1c66a53e1dc4499853bbf61776b5a, type: 3}
   enemy2prefab: {fileID: 3409777995842195204, guid: 992015109d2204d5c9a3ef2da01e8542, type: 3}
   bulletDamage: 0.05
@@ -1032,7 +1032,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.58435917, y: 0.022051334}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1042,7 +1042,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0661535, y: 3.6020517}
   m_EdgeRadius: 0
 --- !u!1 &4709645104500212000
 GameObject:

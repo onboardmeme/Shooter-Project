@@ -11,6 +11,7 @@ public class Boss : MonoBehaviour {
     public float bulletDamage;
     public BoxCollider2D minionSpawnPoint;
     public float initialMoveMax;
+    public bool BossActive { get; private set; }
 
     private float health;
     private float minionSpawnTimer;
@@ -20,17 +21,18 @@ public class Boss : MonoBehaviour {
     {
         health = 1f;
         minionSpawnTimer = 0f;
+        BossActive = true;
     }
 
     private void SpawnEnemy()
     {
-        Vector3 randomY = new Vector3(minionSpawnPoint.bounds.min.x, Random.Range(1, -1), 0);
+        Vector3 randomY = new Vector3(minionSpawnPoint.bounds.min.x, Random.Range(minionSpawnPoint.bounds.min.y, minionSpawnPoint.bounds.max.y), 0);
         GameObject minion = Instantiate(enemy1prefab, randomY, Quaternion.identity);
     }
 
     private void SpawnEnemy2()
     {
-        Vector3 randomY = new Vector3(minionSpawnPoint.bounds.min.x, Random.Range(1, -1), 0);
+        Vector3 randomY = new Vector3(minionSpawnPoint.bounds.min.x, Random.Range(minionSpawnPoint.bounds.min.y, minionSpawnPoint.bounds.max.y), 0);
         GameObject minion = Instantiate(enemy2prefab, randomY, Quaternion.identity);
     }
 
@@ -68,6 +70,7 @@ public class Boss : MonoBehaviour {
                 Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
                 Destroy(gameObject);
                 Score.Instance.HitEnemy();
+                BossActive = false;
             }
         }
         else if (c.gameObject.CompareTag("Player"))
@@ -88,6 +91,7 @@ public class Boss : MonoBehaviour {
                 Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
                 Destroy(gameObject);
                 Score.Instance.HitEnemy();
+                BossActive = false;
             }
         }
         if (collision.CompareTag("Despawn"))
